@@ -1,0 +1,15 @@
+# Python virtual environment
+cricket_pitch_api/backend/venv/
+
+# React dependencies
+node_modules/
+
+# Build files
+dist/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env

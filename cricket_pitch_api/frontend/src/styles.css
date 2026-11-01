@@ -1,0 +1,33 @@
+:root{--bg:#f4efe4;--panel:#fffdf7;--ink:#1d2a1f;--muted:#6b7566;--line:#e0d9c6;--accent:#b5301f;--pace:#b5301f;--seam:#2f7a4d;--spin:#c58a12;--bar:#1d2a1f}
+@media (prefers-color-scheme:dark){:root{--bg:#121a14;--panel:#1a251d;--ink:#eef0e4;--muted:#9aa595;--line:#2c3a2f;--accent:#e2573f;--pace:#e2573f;--seam:#55b47c;--spin:#e0aa3a;--bar:#eef0e4}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,"Iowan Old Style",serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line)}
+.brand{font-size:20px;letter-spacing:.02em;display:flex;align-items:center}.brand b{color:var(--accent)}
+.stump{width:6px;height:22px;background:var(--accent);border-radius:2px;box-shadow:9px 0 0 var(--accent),18px 0 0 var(--accent);margin-right:30px}
+.status{font:13px ui-monospace,Menlo,monospace;color:var(--muted)}
+.status.ok::before,.status.bad::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.status.ok::before{background:var(--seam)}.status.bad::before{background:var(--accent)}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px;display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:900px){main{grid-template-columns:1.1fr 1fr;align-items:start}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px}h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:26px 0 10px}
+.sub,.muted{color:var(--muted)}.small{font-size:12px;text-transform:none;letter-spacing:0}
+.drop{display:block;margin:20px 0 16px;border:2px dashed var(--line);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:.15s}
+.drop:hover,.drop.over,.drop:focus-visible{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,transparent);outline:none}
+.stage{position:relative;display:inline-block;max-width:100%}
+.stage img{display:block;max-width:100%;max-height:440px;border-radius:8px}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.actions{display:flex;gap:10px}
+button{font:600 15px system-ui,sans-serif;padding:11px 20px;border-radius:9px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+button:disabled{opacity:.4;cursor:not-allowed}button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.error{margin-top:14px;padding:10px 14px;border-radius:8px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font:14px system-ui}
+.reco{padding:18px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.label{font:12px system-ui;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.reco-val{font-size:54px;font-weight:700;line-height:1.1}
+.row{display:grid;grid-template-columns:96px 1fr 44px;gap:10px;align-items:center;margin:8px 0;font:14px system-ui}
+.track{height:10px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.fill{height:100%;width:0;background:var(--bar);transition:width .6s ease}
+.row span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.det{display:flex;justify-content:space-between;padding:8px 12px;border:1px solid var(--line);border-radius:8px;margin:6px 0;font:14px system-ui}
+pre{overflow:auto;font-size:12px;background:var(--bg);padding:12px;border-radius:8px}summary{cursor:pointer;color:var(--muted);font:14px system-ui}
